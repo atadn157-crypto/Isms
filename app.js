@@ -4,17 +4,11 @@ const supabase = supabase.createClient(supabaseUrl, supabaseKey)
 
 // ارسال پیام
 async function sendMessage() {
-  const username = document.getElementById('username').value
-  const message = document.getElementById('message').value
+const { data, error } = await supabase
+  .from('messages')
+  .insert([{ username, message }])
 
-  if (!username || !message) return
-
-  await supabase
-    .from('messages')
-    .insert([{ username, message }])
-
-  document.getElementById('message').value = ''
-  loadMessages()
+console.log(data, error)
 }
 
 // گرفتن پیام‌ها
