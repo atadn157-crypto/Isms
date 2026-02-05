@@ -3,21 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>پیام‌رسان ساده</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f7f7f7; }
+    input { padding: 8px; margin: 5px 0; width: 200px; }
+    button { padding: 8px 12px; margin-left: 5px; cursor: pointer; }
+    ul { list-style: none; padding: 0; }
+    li { background: #fff; padding: 8px; margin-bottom: 5px; border-radius: 5px; }
+  </style>
 </head>
 <body>
 
-<h3>💬 پیام‌رسان</h3>
+<h2>💬 پیام‌رسان ساده</h2>
 
-<input id="username" placeholder="نام" />
-<br><br>
-
+<input id="username" placeholder="نام شما" />
+<br>
 <input id="message" placeholder="پیام..." />
-<button onclick="sendMessage()">ارسال</button>
+<button id="sendBtn">ارسال</button>
 
 <ul id="chat"></ul>
 
+<!-- Supabase JS -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script src="app.js"></script>
+<!-- فایل JS -->
+<script src="app.js" defer></script>
 
 </body>
 </html>
