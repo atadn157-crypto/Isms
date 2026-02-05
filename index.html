@@ -2,27 +2,31 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>پیام‌رسان ساده</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f7f7f7; }
-    input { padding: 8px; margin: 5px 0; width: 200px; }
-    button { padding: 8px 12px; margin-left: 5px; cursor: pointer; }
-    ul { list-style: none; padding: 0; }
-    li { background: #fff; padding: 8px; margin-bottom: 5px; border-radius: 5px; }
-  </style>
+  <title>پیام‌رسان مدرن</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
 
-<h2>💬 پیام‌رسان ساده</h2>
+<h1 class="text-3xl font-bold mb-6">💬 پیام‌رسان مدرن</h1>
 
-<input id="username" placeholder="نام شما" />
-<br>
-<input id="message" placeholder="پیام..." />
-<button id="sendBtn">ارسال</button>
+<div class="w-full max-w-md bg-white p-4 rounded-lg shadow-md flex flex-col">
+  
+  <div class="flex mb-4 space-x-2">
+    <input id="username" type="text" placeholder="نام شما" 
+           class="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+  </div>
+  
+  <div class="flex mb-4 space-x-2">
+    <input id="message" type="text" placeholder="پیام..." 
+           class="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+    <button id="sendBtn" 
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">ارسال</button>
+  </div>
 
-<ul id="chat"></ul>
+  <ul id="chat" class="space-y-2 max-h-96 overflow-y-auto"></ul>
 
-<!-- Supabase JS -->
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="app.js" defer></script>
 
