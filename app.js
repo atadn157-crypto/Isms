@@ -1,7 +1,6 @@
 // جایگزین کن با Project URL و anon key خودت
-const supabaseUrl = 'https://hdcppnapoofkdtmmheyf.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkY3BwbmFwb29ma2R0bW1oZXlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAyOTI2MTgsImV4cCI6MjA4NTg2ODYxOH0.x5vL0YsTPSp6RN_M2pwzaPKJIeRqjA59maT-rguQAd8'
-
+const supabaseUrl = 'YOUR_SUPABASE_URL'       // مثلا: https://abcd1234.supabase.co
+const supabaseKey = 'YOUR_SUPABASE_ANON_KEY'  // از Settings → API → anon key
 const supabase = supabase.createClient(supabaseUrl, supabaseKey)
 
 // انتخاب عناصر
@@ -23,6 +22,7 @@ async function sendMessage() {
 
   if (error) {
     console.error('Error sending message:', error)
+    alert('ارسال پیام موفق نبود! Console را چک کنید.')
     return
   }
 
